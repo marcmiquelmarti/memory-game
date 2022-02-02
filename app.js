@@ -113,4 +113,27 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   createBoard()
+
+  function mostraImatge() {
+    
+  }
+
+  function videsTot() {
+    if (optionOneId == optionTwoId) {
+      const videsRestants = document.querySelector('#vides');
+      
+    }
+  }
 })
+
+const grid = document.querySelector('.grid');
+
+function aumentarText() {
+  score1.style.fontSize = "30px";
+}
+
+function resetText() {
+  score1.style.fontSize = "20px"
+}
+
+
