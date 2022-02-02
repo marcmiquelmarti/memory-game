@@ -55,6 +55,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const grid = document.querySelector('.grid')
   const resultDisplay = document.querySelector('#result')
+  const videsDisplay = document.querySelector('#videsTotals')
+  let videsRestants = 4
+  
   let cardsChosen = []
   let cardsChosenId = []
   let cardsWon = []
@@ -80,6 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
       cards[optionOneId].setAttribute('src', 'images/blank.png')
       cards[optionTwoId].setAttribute('src', 'images/blank.png')
       alert('You have clicked the same image!')
+      vidaPerduda();
     }
     else if (cardsChosen[0] === cardsChosen[1]) {
       alert('You found a match')
@@ -88,14 +92,18 @@ document.addEventListener('DOMContentLoaded', () => {
       cards[optionOneId].removeEventListener('click', flipCard)
       cards[optionTwoId].removeEventListener('click', flipCard)
       cardsWon.push(cardsChosen)
+      
     } else {
       cards[optionOneId].setAttribute('src', 'images/blank.png')
       cards[optionTwoId].setAttribute('src', 'images/blank.png')
       alert('Sorry, try again')
+      vidaPerduda();
     }
     cardsChosen = []
     cardsChosenId = []
+    vidaPerduda();
     resultDisplay.textContent = cardsWon.length
+    videsDisplay.textContent = videsRestants
     if  (cardsWon.length === cardArray.length/2) {
       resultDisplay.textContent = 'Congratulations! You found them all!'
     }
@@ -114,15 +122,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
   createBoard()
 
-  function mostraImatge() {
+  // function mostraImatge() {
     
-  }
+  // }
 
-  function videsTot() {
-    if (optionOneId == optionTwoId) {
-      const videsRestants = document.querySelector('#vides');
-      
-    }
+  // function historialClick() {
+  //   const histClick = document.querySelector('.historial');
+
+  //   if()
+
+  // }
+
+  
+
+  function vidaPerduda() {
+    
+    
+    if (videsRestants > 0) {
+      if (cardsChosen[0] !== cardsChosen[1]) {
+        videsRestants--;
+        videsDisplay.textContent = videsRestants;
+      } else {
+        videsDisplay.textContent = videsRestants;
+      }
+      } else if(videsRestants <= 0){
+        alert("Has perdut Marc Miquel Martí!");
+      }
+    
+    
   }
 })
 

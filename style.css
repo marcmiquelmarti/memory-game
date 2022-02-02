@@ -4,11 +4,23 @@
   width: 400px;
   height: 300px;
 }
-.vides {
+
+.vides{
+  display: flex;
+  justify-content: space-around;
 }
 
+.historial{
+  display: flex;
+  justify-content: space-around;
+
+}
 .score1 {
+  float: left;
+  display: flex;
   font-size: 20px;
+  justify-content: space-around;
+
 }
 
 .score1 p:hover {
