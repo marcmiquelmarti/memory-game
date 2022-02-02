@@ -122,9 +122,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   createBoard()
 
-  // function mostraImatge() {
+  function mostraImatge() {
+    let imagen = document.getElementsByClassName('.imgClick')
+    let ide = document.getElementById('.grid');
     
-  // }
+  }
 
   // function historialClick() {
   //   const histClick = document.querySelector('.historial');
@@ -132,6 +134,10 @@ document.addEventListener('DOMContentLoaded', () => {
   //   if()
 
   // }
+
+
+
+
 
   
 
